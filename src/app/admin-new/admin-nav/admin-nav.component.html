@@ -1,0 +1,75 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <img
+      src="\src\assets\img\comlogo.jpg"
+      alt="company logo"
+      style="width:100px;height:100px;"
+    />
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/eventcreation">Create Events</a>
+      <a mat-list-item routerLink="/history">Events History</a>
+      <a mat-list-item routerLink="/analysefeedbacks">Feedbacks</a>
+      <a mat-list-item routerLink="/memberList">Member List</a>
+      <a mat-list-item routerLink="/requestAdmin" routerLinkActive="active"
+        >Admin Requests</a
+      >
+      <a mat-list-item routerLink="/memberReports" routerLinkActive="active">
+        Membership Reports</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <!-- <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="(isHandset$ | async)"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button> -->
+      <span>
+        <div class="container">
+          <div class="row">
+            <div class="col s8 offset-2">
+              
+                <!-- {{ id }} <br />
+                {{ name }}
+              -->
+             
+              <button mat-raised-button color="accent" type="button"(click)="featuredInput1.click()">Change</button>
+              
+                <img src={{url}} alt="..."  style="width:200px;height:200px;" class="img-thumbnail">
+              
+              <input #featuredInput1 style="display: none;" type="file" value="upload" id="fileButton" (change)="onFileSelected($event)" />
+            
+              <!-- <form>
+                <div fxLayoutAlign="space-arou
+                nd center">
+                  <div> -->
+                  <!-- <img [src]="imageUrl" style="width:100px;height:100px"> -->
+                  <!-- <button type="button"(click)="featuredInput1.click()">Change your profile picture</button>
+                  <input #featuredInput1 style="display: none;" type="file"  (change)="featuredPhotoSelected($event.target.files)"/>
+                  <img [src] ="(featuredPhotoStream | async)?.url1" alt="featured photo1" style="width:100px;height:100px"> -->
+                  <!-- <button type="submit" class="btn">Submit</button> -->
+                <!-- </div>
+                </div>
+                </form> -->
+            </div>
+          </div>
+        </div>
+      </span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

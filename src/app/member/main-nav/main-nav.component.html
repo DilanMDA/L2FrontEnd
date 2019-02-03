@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"  fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+  [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <mat-toolbar class="toolbarClass">
+      <!-- Member ID:{{ id }}
+      <br>
+      Name:{{ name }} -->
+      <strong class="una">{{info.username}} <i class="fa fa-cog fa-spin fa-1x fa-fw"></i></strong>
+          
+      
+    </mat-toolbar>
+
+    <mat-nav-list>
+      
+      <a mat-list-item routerLink="/memberdetails">Member Profile</a>
+      <a mat-list-item routerLink="/updateprof">Update Details</a>
+      <a mat-list-item routerLink="/eventss">Event Details</a>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>
+<div class="topright">
+  <form>
+    <img [src]="imageUrl" style="float:right;width:250px;height:200px">
+  </form>
+</div>
+              
+            
+      </span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <html>
+      <body>
+       
+    <h1>
+      
+    </h1>
+  </body>
+  </html>
+  
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

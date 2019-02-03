@@ -1,0 +1,87 @@
+<admin-nav></admin-nav>
+<div class="container">
+  <div class="example-form">
+  <div>
+    <form (ngSubmit)="onSubmit()">
+      <br /><br />
+
+      <div class="form-group">
+        <!-- <label for="eventname">Event Name</label> -->
+        <mat-form-field class="example-full-width">
+          <input matInput
+            type="text"
+            [(ngModel)]="event.eventname"
+            name="eventname"
+            id="eventname"
+            placeholder="Event Name Here"
+          />
+      </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <label for="venue">Venue</label>
+        <input
+          type="text"
+          [(ngModel)]="event.venue"
+          name="venue"
+          class="form-control"
+          id="venue"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input
+          type="date"
+          [(ngModel)]="event.date"
+          name="date"
+          class="form-control"
+          id="date"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="starttime">Start Time</label>
+        <input
+          type="time"
+          [(ngModel)]="event.starttime"
+          name="starttime"
+          class="form-control"
+          id="starttime"
+        />
+      </div>
+      <div class="form-group">
+        <label for="endtime">End Time</label>
+        <input
+          type="time"
+          [(ngModel)]="event.endtime"
+          name="endtime"
+          class="form-control"
+          id="endtime"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="eventfee">Event Fee</label>
+        <input
+          type="text"
+          [(ngModel)]="event.eventfee"
+          name="eventfee"
+          class="form-control"
+          id="eventfee"
+        />
+      </div>
+
+      <button mat-raised-button color="accent">Submit</button>
+      <!-- <input type="submit" value="Submit" /> -->
+    </form>
+    <!-- <br /><br /> -->
+    <!-- <button><a>Back to Profile </a></button> -->
+  </div>
+</div>
+</div>
+<!--
+        <button>
+          <a routerLink="/CreatedEvents" routerLinkActive="active">Submit</a>
+        </button>
+      -->
